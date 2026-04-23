@@ -46,7 +46,6 @@ export default function LoginPage() {
   const [showAccounts, setShowAccounts] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { toast } = useToast();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
