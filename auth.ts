@@ -5,9 +5,13 @@ import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
 
+/**
+ * Vercel + Supabase Production Setup
+ * Using database session strategy with Prisma Adapter
+ */
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  session: { strategy: "database" },
+  session: { strategy: "database" }, // Ensures real-time session tracking in database
   pages: {
     signIn: "/",
   },
